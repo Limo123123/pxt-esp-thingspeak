@@ -1,5 +1,5 @@
 {
-    "name": "mkleinsb-pxt-esp-thingspeak",
+    "name": "pxt-esp-thingspeak",
     "version": "0.0.0",
     "description": "",
     "dependencies": {
