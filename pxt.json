@@ -4,16 +4,19 @@
     "description": "connect to thingspeak via esp8266",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "pxt-calliope-esp": "github:mkleinsb/pxt-calliope-esp#v0.0.1"
+        "radio": "*"
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "esp8266.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
+    "supportedTargets": [
+        "calliopemini"
+    ],
     "preferredEditor": "tsprj"
 }
