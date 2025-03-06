@@ -1,3 +1,8 @@
+FORK
+
+This Code is rewritten for an get from ThingSpeak0 function.
+This Code is made for the Raspberry Pi Pico 1/2 W. Don't think, that it will work with the ESP
+
 # pxt-esp-thingspeak
 
 
