@@ -117,11 +117,14 @@ namespace esp8266 {
         data = serial.readString()
         let splitData = data.split(`"field${field}":"`);
         if (splitData.length > 1) {
-              let valueString = splitData[1].split(`"`)[0];
-              let value = parseFloat(valueString);
+            let valueString = splitData[1].split(`"`)[0];
+            let value = parseFloat(valueString);
         } else {
-              let value = NaN;
+            let value = NaN;
         }
+
+      
+
 
         
         sendAtCmd("AT+CIPCLOSE")
