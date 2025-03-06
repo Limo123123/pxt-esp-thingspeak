@@ -42,7 +42,7 @@ namespace esp8266 {
         return isWifiConnected
     }
 
-   /**
+    /**
      * Send data to ThinkSpeak
      */
     //% block="Send Data to your ThinkSpeak Channel|Write API Key %apiKey|Field1 %field1|Field2 %field2|Field3 %field3|Field4 %field4|Field5 %field5|Field6 %field6|Field7 %field7|Field8 %field8"
@@ -90,7 +90,6 @@ namespace esp8266 {
         }
     }
 
-
     /**
      * Retrieve data from ThingSpeak
      */
@@ -131,4 +130,25 @@ namespace esp8266 {
         waitAtResponse("OK", "ERROR", "None", 2000)
         return value
     }
-} 
+
+    function waitAtResponse(target1: string, target2: string, target3: string, timeout: number) {
+        let buffer = ""
+        let start = input.runningTime()
+
+        while ((input.runningTime() - start) < timeout) {
+            buffer += serial.readString()
+
+            if (buffer.includes(target1)) return 1
+            if (buffer.includes(target2)) return 2
+            if (buffer.includes(target3)) return 3
+
+            basic.pause(100)
+        }
+
+        return 0
+    }
+
+    function sendAtCmd(cmd: string) {
+        serial.writeString(cmd + "\u000D\u000A")
+    }
+}
