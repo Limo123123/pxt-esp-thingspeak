@@ -1,6 +1,6 @@
 {
     "name": "pxt-esp-thingspeak",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "connect to thingspeak via esp8266",
     "dependencies": {
         "core": "*",
