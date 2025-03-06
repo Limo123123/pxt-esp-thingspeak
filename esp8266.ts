@@ -115,7 +115,7 @@ namespace esp8266 {
 
         sendAtCmd(request)
         data = serial.readString()
-        let value = parseFloat(data.split("field" + field + "\":\"")[1]?.split("\"")[0] || "NaN")
+        let value = parseFloat(data.match(new RegExp(`"field${field}":"(.*?)"`))?.[1] || "NaN");
         
         sendAtCmd("AT+CIPCLOSE")
         waitAtResponse("OK", "ERROR", "None", 2000)
