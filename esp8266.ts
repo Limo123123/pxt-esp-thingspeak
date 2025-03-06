@@ -115,11 +115,10 @@ namespace esp8266 {
         sendAtCmd(request)
         data = serial.readString()
         let splitData = data.split(`"field${field}":"`);
+        let value = NaN; // Default value
         if (splitData.length > 1) {
             let valueString = splitData[1].split(`"`)[0];
-            let value = parseFloat(valueString);
-        } else {
-            let value = NaN;
+            value = parseFloat(valueString);
         }
 
       
